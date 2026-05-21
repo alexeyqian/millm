@@ -1,6 +1,5 @@
 import math
 import random
-from vector_ops import relu, softmax
 
 def matmul(A, B):
     rows_A, cols_A = len(A), len(A[0])
@@ -21,14 +20,3 @@ def matmul(A, B):
 def shape(matrix):
     return (len(matrix), len(matrix[0])
 
-def relu_matrix(X):
-    result = []
-    for x in X:
-        result.append(relu(x))
-    return result
-
-def softmax_matrix(logit_matrix):
-    prob_matrix = []
-    for logits in logit_matrix:
-	prob_matrix.append(softmax(logits))
-    return prob_matrix

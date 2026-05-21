@@ -28,4 +28,14 @@ def softmax(logits_vec):
     total = sum(exps)
     for exp in exps:
         probs.append(exp/total)
-    return probs 
+    return probs
+
+# pred = [0.7, 0.2, 0.1]
+# target = [1, 0, 0]
+# loss = 0.3566749
+def cross_entropy(preds, targets):
+    loss = 0
+    for p,t in zip(preds,targets):
+	loss += t*math.log(p)
+    return -loss
+ 
