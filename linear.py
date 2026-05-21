@@ -1,12 +1,13 @@
+import random
+import math
+
 class Linear:
     def __init__(self, input_size, output_size):
         self.weights = []
-	value = 0.1
         for i in range(input_size):
             row = []
             for j in range(output_size):
-                row.append(value)
-                value += 0.1
+                row.append(random.uniform(-1,1))
             self.weights.append(row)
         self.bias = [0.0 for _ in range(output_size)]
 

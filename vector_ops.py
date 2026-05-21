@@ -20,4 +20,12 @@ def relu(x_vec):
         result.append(max(0, v))
     return result
 
-
+def softmax(logits_vec):
+    exps = []
+    for xi in logits_vec:
+        exps.append(math.exp(xi))
+    probs = []
+    total = sum(exps)
+    for exp in exps:
+        probs.append(exp/total)
+    return probs 
